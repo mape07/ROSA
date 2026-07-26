@@ -1,1 +1,2074 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agua Pura Colombia | Recarga de Agua a Domicilio en Bogotá</title>
+    <meta name="description" content="Recarga de botellones de agua purificada a domicilio en Bogotá y Colombia. Servicio rápido, seguro y confiable para hogares, oficinas, restaurantes y eventos. Pide por WhatsApp.">
+    <meta name="keywords" content="recarga de agua Bogotá, agua a domicilio Bogotá, botellones de agua, agua purificada a domicilio, venta de agua en Colombia, recarga de botellones, servicio de agua para empresas">
+    <meta name="author" content="Agua Pura Colombia">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Agua Pura Colombia | Recarga de Agua a Domicilio">
+    <meta property="og:description" content="Agua purificada hasta la puerta de tu hogar. Servicio rápido, seguro y confiable en Bogotá y toda Colombia. Pide por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aguapuracolombia.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=1200&q=80">
+    <meta property="og:locale" content="es_CO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#087EA4">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><path d='M32 8c-8 12-20 22-20 32a20 20 0 0040 0C52 30 40 20 32 8z' fill='%23087EA4'/><circle cx='32' cy='44' r='6' fill='%2342E6C1'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+    <style>
+        :root {
+            --azul-principal: #087EA4;
+            --azul-oscuro: #043B5C;
+            --azul-claro: #25C6DA;
+            --verde-menta: #42E6C1;
+            --blanco: #FFFFFF;
+            --fondo-claro: #F2FCFF;
+            --gris-texto: #4A5568;
+            --gris-claro: #E2E8F0;
+            --sombra-azul: 0 8px 32px rgba(8, 126, 164, 0.15);
+            --sombra-verde: 0 8px 32px rgba(66, 230, 193, 0.2);
+            --transicion: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --borde-radius: 16px;
+            --borde-radius-lg: 24px;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--fondo-claro);
+            color: #1A202C;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            line-height: 1.25;
+            letter-spacing: -0.3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ============ PRELOADER ============ */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--azul-oscuro);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+            pointer-events: all;
+            overflow: hidden;
+        }
+        #preloader.oculto {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #preloader .gota-preloader {
+            width: 80px;
+            height: 100px;
+            position: relative;
+            animation: caerGota 0.9s ease forwards;
+            z-index: 2;
+        }
+        @keyframes caerGota {
+            0% {
+                transform: translateY(-120px) scale(0.3);
+                opacity: 0;
+            }
+            50% {
+                transform: translateY(10px) scale(1.1);
+                opacity: 1;
+            }
+            70% {
+                transform: translateY(-5px) scale(0.95);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        #preloader .gota-preloader .gota-forma {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(180deg, var(--azul-claro) 0%, var(--azul-principal) 100%);
+            border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            box-shadow: 0 10px 40px rgba(8, 126, 164, 0.5), inset 0 -10px 20px rgba(0, 0, 0, 0.15);
+        }
+        #preloader .gota-preloader .gota-brillo {
+            width: 14px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            position: absolute;
+            top: 14px;
+            left: 22px;
+            filter: blur(2px);
+        }
+        #preloader .onda-preloader {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 3px solid rgba(66, 230, 193, 0.6);
+            border-radius: 50%;
+            animation: ondaExpandir 1.2s ease-out forwards;
+            opacity: 0;
+            z-index: 1;
+        }
+        @keyframes ondaExpandir {
+            0% {
+                transform: scale(0.3);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+        #preloader .nombre-preloader {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--blanco);
+            margin-top: 24px;
+            z-index: 2;
+            opacity: 0;
+            animation: aparecerNombre 0.7s ease 0.8s forwards;
+            letter-spacing: -0.5px;
+        }
+        @keyframes aparecerNombre {
+            to {
+                opacity: 1;
+            }
+        }
+        #preloader .nombre-preloader span {
+            color: var(--verde-menta);
+        }
+        #preloader .frase-preloader {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-top: 6px;
+            z-index: 2;
+            opacity: 0;
+            animation: aparecerNombre 0.7s ease 1.1s forwards;
+            letter-spacing: 1px;
+        }
+        #preloader .btn-saltar-preloader {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            z-index: 10;
+            transition: var(--transicion);
+            font-family: 'Inter', sans-serif;
+        }
+        #preloader .btn-saltar-preloader:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--blanco);
+        }
+
+        /* ============ CANVAS DE FONDO ============ */
+        #fondoCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.55;
+        }
+
+        /* ============ HEADER ============ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 14px 0;
+            transition: var(--transicion);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            padding: 10px 0;
+        }
+        .header-contenedor {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--azul-oscuro);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+            /* CAMBIAR NOMBRE EMPRESA: Reemplaza "Agua Pura Colombia" por el nombre deseado */
+        }
+        .logo .icono-logo {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--azul-claro), var(--azul-principal));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            font-size: 1.2rem;
+        }
+        .logo span {
+            color: var(--azul-principal);
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 6px;
+            align-items: center;
+        }
+        nav ul li a {
+            color: var(--azul-oscuro);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 20px;
+            transition: var(--transicion);
+            white-space: nowrap;
+        }
+        nav ul li a:hover,
+        nav ul li a.activo {
+            color: var(--azul-principal);
+            background: rgba(8, 126, 164, 0.06);
+        }
+        .btn-wsp-nav {
+            background: var(--verde-menta) !important;
+            color: var(--azul-oscuro) !important;
+            font-weight: 700 !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transicion);
+            font-size: 0.85rem !important;
+        }
+        .btn-wsp-nav:hover {
+            background: #3ad9b5 !important;
+            box-shadow: var(--sombra-verde);
+            transform: translateY(-2px);
+        }
+        .hamburguesa {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1001;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+        .hamburguesa span {
+            width: 28px;
+            height: 3px;
+            background: var(--azul-oscuro);
+            border-radius: 3px;
+            transition: var(--transicion);
+        }
+        .hamburguesa.activo span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+            background: var(--azul-principal);
+        }
+        .hamburguesa.activo span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburguesa.activo span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+            background: var(--azul-principal);
+        }
+
+        @media (max-width: 1024px) {
+            .hamburguesa {
+                display: flex;
+            }
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 320px;
+                max-width: 85vw;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.97);
+                backdrop-filter: blur(30px);
+                -webkit-backdrop-filter: blur(30px);
+                padding: 100px 30px 40px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+                border-left: 1px solid rgba(8, 126, 164, 0.1);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.08);
+            }
+            nav.activo {
+                right: 0;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 4px;
+                align-items: stretch;
+            }
+            nav ul li a {
+                display: block;
+                padding: 14px 18px;
+                font-size: 1rem;
+                border-radius: 12px;
+            }
+            .btn-wsp-nav {
+                justify-content: center;
+                margin-top: 10px;
+                text-align: center;
+            }
+        }
+
+        /* ============ SECCIONES GENERALES ============ */
+        .seccion {
+            position: relative;
+            z-index: 1;
+            padding: 90px 24px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .seccion {
+                padding: 60px 16px;
+            }
+        }
+        .seccion-titulo {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .seccion-titulo h2 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--azul-oscuro);
+        }
+        .seccion-titulo h2 span {
+            color: var(--azul-principal);
+        }
+        .seccion-titulo p {
+            color: var(--gris-texto);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .seccion-titulo h2 {
+                font-size: 1.8rem;
+            }
+            .seccion-titulo p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* ============ HERO ============ */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            padding: 120px 24px 70px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-contenido {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-insignia {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(8, 126, 164, 0.06);
+            border: 1px solid rgba(8, 126, 164, 0.2);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            color: var(--azul-principal);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .hero-insignia i {
+            color: var(--verde-menta);
+            font-size: 0.7rem;
+            animation: pulso 2s infinite;
+        }
+        @keyframes pulso {
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        .hero-titulo {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            color: var(--azul-oscuro);
+            line-height: 1.15;
+        }
+        .hero-titulo span {
+            color: var(--azul-principal);
+        }
+        .hero-subtitulo {
+            font-size: 1.1rem;
+            color: var(--gris-texto);
+            margin-bottom: 24px;
+            max-width: 480px;
+        }
+        .hero-botones {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .btn-primario {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--azul-principal);
+            color: var(--blanco);
+            padding: 14px 26px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transicion);
+            border: none;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.2px;
+        }
+        .btn-primario:hover {
+            background: #06709a;
+            box-shadow: var(--sombra-azul);
+            transform: translateY(-3px);
+        }
+        .btn-secundario {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--azul-principal);
+            padding: 14px 26px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 2px solid var(--azul-principal);
+            transition: var(--transicion);
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .btn-secundario:hover {
+            background: rgba(8, 126, 164, 0.04);
+            box-shadow: var(--sombra-azul);
+        }
+        .hero-indicadores {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--gris-texto);
+        }
+        .hero-indicadores span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .hero-indicadores i {
+            color: var(--verde-menta);
+        }
+        .hero-imagen {
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .hero-imagen .circulo-agua {
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-width: 420px;
+            margin: 0 auto;
+            background: radial-gradient(circle at 40% 45%, rgba(37, 198, 218, 0.25) 0%, rgba(8, 126, 164, 0.1) 50%, rgba(4, 59, 92, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(8, 126, 164, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        .hero-imagen .circulo-agua .botellon-icono {
+            font-size: 8rem;
+            color: var(--azul-principal);
+            opacity: 0.8;
+            animation: flotar 4s ease-in-out infinite;
+        }
+        @keyframes flotar {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+        .hero-imagen .burbuja-decorativa {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(37, 198, 218, 0.2);
+            pointer-events: none;
+        }
+        @media (max-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .hero-imagen {
+                order: -1;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            .hero-titulo {
+                font-size: 2.1rem;
+            }
+            .hero-subtitulo {
+                font-size: 0.95rem;
+            }
+            #hero {
+                padding: 100px 16px 50px;
+            }
+        }
+
+        /* ============ FORMULARIO RÁPIDO HERO ============ */
+        .formulario-rapido {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--borde-radius-lg);
+            padding: 28px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: var(--sombra-azul);
+            margin-top: 24px;
+            max-width: 500px;
+        }
+        .formulario-rapido h4 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: var(--azul-oscuro);
+        }
+        .form-rapido-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 480px) {
+            .form-rapido-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .form-rapido-grid input,
+        .form-rapido-grid select {
+            padding: 11px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(8, 126, 164, 0.2);
+            background: rgba(255, 255, 255, 0.7);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--azul-oscuro);
+            transition: var(--transicion);
+            width: 100%;
+        }
+        .form-rapido-grid input:focus,
+        .form-rapido-grid select:focus {
+            outline: none;
+            border-color: var(--azul-claro);
+            box-shadow: 0 0 0 3px rgba(37, 198, 218, 0.1);
+        }
+        .form-rapido-grid .ancho-completo {
+            grid-column: 1 / -1;
+        }
+        .btn-form-rapido {
+            grid-column: 1 / -1;
+            padding: 12px;
+            background: var(--verde-menta);
+            color: var(--azul-oscuro);
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: var(--transicion);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-form-rapido:hover {
+            background: #3ad9b5;
+            box-shadow: var(--sombra-verde);
+        }
+
+        /* ============ BARRA DE CONFIANZA ============ */
+        .barra-confianza {
+            background: var(--blanco);
+            border-top: 1px solid rgba(8, 126, 164, 0.08);
+            border-bottom: 1px solid rgba(8, 126, 164, 0.08);
+            padding: 28px 0;
+            position: relative;
+            z-index: 1;
+        }
+        .barra-confianza-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .barra-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            padding: 10px;
+            transition: var(--transicion);
+            cursor: default;
+            border-radius: 12px;
+        }
+        .barra-item:hover {
+            background: rgba(8, 126, 164, 0.03);
+            transform: translateY(-3px);
+        }
+        .barra-item i {
+            font-size: 1.8rem;
+            color: var(--azul-claro);
+            margin-bottom: 6px;
+            transition: var(--transicion);
+        }
+        .barra-item:hover i {
+            color: var(--azul-principal);
+            transform: scale(1.1);
+        }
+        .barra-item p {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--azul-oscuro);
+        }
+
+        /* ============ TARJETAS DE SERVICIOS ============ */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .servicio-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: var(--borde-radius-lg);
+            padding: 30px 24px;
+            transition: var(--transicion);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .servicio-card:hover {
+            border-color: rgba(8, 126, 164, 0.3);
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-azul);
+        }
+        .servicio-card::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(37, 198, 218, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: var(--transicion);
+        }
+        .servicio-card:hover::after {
+            transform: scale(2.5);
+            opacity: 0.5;
+        }
+        .servicio-icono {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(37, 198, 218, 0.2), rgba(66, 230, 193, 0.2));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--azul-principal);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .servicio-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--azul-oscuro);
+            position: relative;
+            z-index: 1;
+        }
+        .servicio-card p {
+            font-size: 0.9rem;
+            color: var(--gris-texto);
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .servicio-card .btn-solicitar {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--azul-principal);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+            transition: var(--transicion);
+        }
+        .servicio-card .btn-solicitar:hover {
+            color: var(--verde-menta);
+            gap: 10px;
+        }
+
+        /* ============ CÓMO FUNCIONA ============ */
+        .pasos-contenedor {
+            position: relative;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .pasos-linea-svg {
+            position: absolute;
+            top: 40px;
+            left: 8%;
+            right: 8%;
+            height: 4px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .pasos-linea-svg {
+                display: none;
+            }
+            .pasos-contenedor {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+            }
+        }
+        .paso {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: var(--borde-radius-lg);
+            padding: 30px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transicion);
+        }
+        .paso:hover {
+            border-color: rgba(8, 126, 164, 0.3);
+            box-shadow: var(--sombra-azul);
+            transform: translateY(-4px);
+        }
+        .paso-numero {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--azul-claro), var(--azul-principal));
+            color: var(--blanco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 0 auto 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            box-shadow: 0 6px 20px rgba(8, 126, 164, 0.25);
+        }
+        .paso h4 {
+            font-size: 0.95rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 4px;
+        }
+        .paso p {
+            font-size: 0.85rem;
+            color: var(--gris-texto);
+        }
+
+        /* ============ COBERTURA ============ */
+        .cobertura-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .cobertura-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .cobertura-mapa-visual {
+            background: linear-gradient(135deg, rgba(37, 198, 218, 0.1), rgba(66, 230, 193, 0.1));
+            border-radius: var(--borde-radius-lg);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(8, 126, 164, 0.15);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cobertura-mapa-visual i {
+            font-size: 5rem;
+            color: var(--azul-principal);
+            opacity: 0.5;
+            margin-bottom: 12px;
+        }
+        .zonas-lista {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            list-style: none;
+        }
+        .zonas-lista li {
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-left: 3px solid var(--verde-menta);
+            color: var(--azul-oscuro);
+            font-weight: 500;
+        }
+        .zonas-lista li i {
+            color: var(--verde-menta);
+            font-size: 0.7rem;
+        }
+        .consulta-cobertura-input {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        .consulta-cobertura-input input {
+            flex: 1;
+            min-width: 180px;
+            padding: 12px 16px;
+            border-radius: 25px;
+            border: 1px solid rgba(8, 126, 164, 0.3);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .consulta-cobertura-input button {
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: var(--verde-menta);
+            color: var(--azul-oscuro);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: var(--transicion);
+            white-space: nowrap;
+        }
+        .consulta-cobertura-input button:hover {
+            background: #3ad9b5;
+            box-shadow: var(--sombra-verde);
+        }
+
+        /* ============ BENEFICIOS ============ */
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .beneficio-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: var(--borde-radius);
+            padding: 24px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transicion);
+        }
+        .beneficio-item:hover {
+            border-color: rgba(8, 126, 164, 0.25);
+            box-shadow: var(--sombra-azul);
+            transform: translateY(-3px);
+        }
+        .beneficio-item i {
+            font-size: 2rem;
+            color: var(--azul-claro);
+            margin-bottom: 10px;
+        }
+        .beneficio-item h4 {
+            font-size: 0.95rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 4px;
+        }
+        .beneficio-item p {
+            font-size: 0.8rem;
+            color: var(--gris-texto);
+        }
+
+        /* ============ PLANES ============ */
+        .planes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .plan-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: var(--borde-radius-lg);
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transicion);
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card:hover {
+            border-color: rgba(8, 126, 164, 0.3);
+            box-shadow: var(--sombra-azul);
+            transform: translateY(-6px);
+        }
+        .plan-card.destacado {
+            border-color: var(--azul-claro);
+            box-shadow: 0 0 0 3px rgba(37, 198, 218, 0.15);
+        }
+        .plan-card .plan-icono {
+            font-size: 3rem;
+            color: var(--azul-claro);
+            margin-bottom: 12px;
+        }
+        .plan-card h3 {
+            font-size: 1.3rem;
+            color: var(--azul-oscuro);
+            margin-bottom: 6px;
+        }
+        .plan-card p {
+            font-size: 0.9rem;
+            color: var(--gris-texto);
+            margin-bottom: 16px;
+        }
+        .plan-card .btn-plan {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--azul-principal);
+            color: var(--blanco);
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transicion);
+            font-size: 0.9rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .plan-card .btn-plan:hover {
+            background: #06709a;
+            box-shadow: var(--sombra-azul);
+        }
+
+        /* ============ TESTIMONIOS ============ */
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .testimonio-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: var(--borde-radius-lg);
+            padding: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transicion);
+            border-left: 4px solid var(--verde-menta);
+        }
+        .testimonio-card:hover {
+            box-shadow: var(--sombra-azul);
+            transform: translateY(-2px);
+        }
+        .testimonio-card .comillas {
+            font-size: 2rem;
+            color: var(--azul-claro);
+            opacity: 0.5;
+            line-height: 1;
+        }
+        .testimonio-card p {
+            font-size: 0.9rem;
+            color: var(--gris-texto);
+            font-style: italic;
+            margin: 8px 0;
+        }
+        .testimonio-card .testimonio-autor {
+            font-weight: 700;
+            color: var(--azul-oscuro);
+            font-size: 0.85rem;
+        }
+        .testimonio-card .testimonio-etiqueta {
+            font-size: 0.75rem;
+            color: var(--azul-principal);
+            font-weight: 500;
+        }
+
+        /* ============ FAQ ============ */
+        .faq-acordeon {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: var(--borde-radius);
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            transition: var(--transicion);
+        }
+        .faq-item:hover {
+            border-color: rgba(8, 126, 164, 0.2);
+        }
+        .faq-pregunta {
+            padding: 18px 22px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transicion);
+            font-size: 0.95rem;
+            color: var(--azul-oscuro);
+        }
+        .faq-pregunta:hover {
+            color: var(--azul-principal);
+        }
+        .faq-pregunta i {
+            transition: transform 0.35s ease;
+            color: var(--azul-claro);
+            font-size: 0.9rem;
+        }
+        .faq-item.activo .faq-pregunta i {
+            transform: rotate(180deg);
+        }
+        .faq-respuesta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.45s ease;
+        }
+        .faq-item.activo .faq-respuesta {
+            max-height: 300px;
+            padding: 0 22px 18px;
+        }
+        .faq-respuesta p {
+            color: var(--gris-texto);
+            font-size: 0.88rem;
+        }
+
+        /* ============ CTA FINAL ============ */
+        .cta-final {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-principal) 100%);
+            text-align: center;
+            padding: 70px 24px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            color: var(--blanco);
+        }
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='rgba(255,255,255,0.05)' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,144C672,139,768,181,864,197.3C960,213,1056,203,1152,186.7C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            background-size: cover;
+            animation: moverOndas 12s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes moverOndas {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 1440px 0;
+            }
+        }
+        .cta-final-contenido {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .cta-final h2 {
+            font-size: 2.4rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            color: var(--blanco);
+        }
+        .cta-final p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin-bottom: 24px;
+        }
+        .btn-cta-pulso {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--verde-menta);
+            color: var(--azul-oscuro);
+            padding: 16px 34px;
+            border-radius: 35px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transicion);
+            animation: pulsoBoton 2.5s infinite;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        @keyframes pulsoBoton {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(66, 230, 193, 0.6);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(66, 230, 193, 0);
+            }
+        }
+        .btn-cta-pulso:hover {
+            background: #3ad9b5;
+            transform: scale(1.05);
+            animation: none;
+            box-shadow: 0 10px 40px rgba(66, 230, 193, 0.5);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--azul-oscuro);
+            padding: 50px 24px 24px;
+            position: relative;
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 14px;
+            color: var(--verde-menta);
+        }
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: var(--transicion);
+        }
+        .footer-col a:hover {
+            color: var(--verde-menta);
+        }
+        .footer-copy {
+            max-width: var(--max-width);
+            margin: 30px auto 0;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ============ BOTONES FLOTANTES ============ */
+        .btn-flotante-wsp {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 998;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7rem;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+            transition: var(--transicion);
+            /* CAMBIAR NÚMERO WHATSAPP: Reemplazar 573001234567 por el número real */
+        }
+        .btn-flotante-wsp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 36px rgba(37, 211, 102, 0.55);
+        }
+        .btn-flotante-arriba {
+            position: fixed;
+            bottom: 100px;
+            right: 28px;
+            z-index: 998;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            color: var(--azul-principal);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: 1px solid rgba(8, 126, 164, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: var(--transicion);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .btn-flotante-arriba.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .btn-flotante-arriba:hover {
+            background: var(--azul-principal);
+            color: var(--blanco);
+        }
+        @media (max-width: 600px) {
+            .btn-flotante-wsp {
+                width: 48px;
+                height: 48px;
+                font-size: 1.4rem;
+                bottom: 18px;
+                right: 14px;
+            }
+            .btn-flotante-arriba {
+                width: 38px;
+                height: 38px;
+                font-size: 0.95rem;
+                bottom: 80px;
+                right: 14px;
+            }
+        }
+
+        /* ============ UTILIDADES ============ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .notificacion {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1a8a3f;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 12px;
+            z-index: 10000;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transform: translateX(120%);
+            transition: transform 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .notificacion.visible {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== PRELOADER ==================== -->
+    <div id="preloader">
+        <div class="gota-preloader">
+            <div class="gota-forma"></div>
+            <div class="gota-brillo"></div>
+        </div>
+        <div class="onda-preloader"></div>
+        <!-- CAMBIAR NOMBRE EMPRESA: Reemplaza "Agua Pura Colombia" por el nombre real -->
+        <div class="nombre-preloader">Agua <span>Pura Colombia</span></div>
+        <div class="frase-preloader">Agua pura. Entrega rápida.</div>
+        <button class="btn-saltar-preloader" id="btnSaltarPreloader" aria-label="Saltar introducción">Saltar</button>
+    </div>
+
+    <!-- ==================== CANVAS DE FONDO ==================== -->
+    <canvas id="fondoCanvas"></canvas>
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header">
+        <div class="header-contenedor">
+            <!-- CAMBIAR NOMBRE EMPRESA: Reemplaza el texto del logo -->
+            <a href="#hero" class="logo">
+                <div class="icono-logo"><i class="fas fa-tint"></i></div>
+                Agua <span>Pura Colombia</span>
+            </a>
+            <button class="hamburguesa" id="hamburguesa" aria-label="Menú de navegación">
+                <span></span><span></span><span></span>
+            </button>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#hero" class="activo">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#cobertura">Cobertura</a></li>
+                    <li><a href="#como-funciona">Cómo funciona</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <!-- CAMBIAR NÚMERO WHATSAPP: Reemplaza 573001234567 en el href -->
+                    <li><a href="https://wa.me/573001234567?text=Hola,%20quiero%20pedir%20agua%20a%20domicilio." target="_blank" rel="noopener" class="btn-wsp-nav"><i class="fab fa-whatsapp"></i> Pedir por WhatsApp</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO ==================== -->
+    <section id="hero" class="seccion">
+        <div class="hero-grid">
+            <div class="hero-contenido">
+                <div class="hero-insignia">
+                    <i class="fas fa-circle"></i> Atención prioritaria en Bogotá · Cobertura disponible en Colombia
+                </div>
+                <h1 class="hero-titulo">Recarga de agua a domicilio en <span>Bogotá y toda Colombia</span></h1>
+                <p class="hero-subtitulo">Recibe agua purificada de forma rápida, segura y confiable. Atendemos hogares, oficinas, negocios y eventos con servicio directo por WhatsApp.</p>
+                <div class="hero-botones">
+                    <!-- CAMBIAR NÚMERO WHATSAPP en los href -->
+                    <a href="https://wa.me/573001234567?text=Hola,%20quiero%20solicitar%20una%20recarga%20de%20agua%20a%20domicilio." target="_blank" rel="noopener" class="btn-primario"><i class="fab fa-whatsapp"></i> Solicitar recarga ahora</a>
+                    <a href="#cobertura" class="btn-secundario"><i class="fas fa-map-marker-alt"></i> Consultar cobertura</a>
+                </div>
+                <div class="hero-indicadores">
+                    <span><i class="fas fa-check-circle"></i> Atención por WhatsApp</span>
+                    <span><i class="fas fa-check-circle"></i> Servicio urgente disponible</span>
+                </div>
+                <!-- Formulario rápido -->
+                <div class="formulario-rapido" id="formRapido">
+                    <h4>📋 Solicitud rápida por WhatsApp</h4>
+                    <div class="form-rapido-grid">
+                        <input type="text" id="rapidoNombre" placeholder="Nombre *" required>
+                        <input type="tel" id="rapidoTelefono" placeholder="Teléfono *" required>
+                        <input type="text" id="rapidoCiudad" placeholder="Ciudad *" required class="ancho-completo">
+                        <input type="text" id="rapidoBarrio" placeholder="Barrio o localidad">
+                        <select id="rapidoServicio">
+                            <option value="">Tipo de servicio</option>
+                            <option value="Recarga de botellones">Recarga de botellones</option>
+                            <option value="Venta de botellones">Venta de botellones</option>
+                            <option value="Entrega a domicilio">Entrega a domicilio</option>
+                            <option value="Servicio urgente">Servicio urgente</option>
+                            <option value="Plan empresarial">Plan empresarial</option>
+                            <option value="Agua para eventos">Agua para eventos</option>
+                        </select>
+                        <input type="number" id="rapidoCantidad" placeholder="Cantidad de botellones" min="1">
+                        <button type="button" class="btn-form-rapido ancho-completo" id="btnFormRapido"><i class="fab fa-whatsapp"></i> Enviar solicitud por WhatsApp</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-imagen">
+                <div class="circulo-agua">
+                    <i class="fas fa-water botellon-icono"></i>
+                    <div class="burbuja-decorativa" style="width:30px;height:30px;top:15%;left:12%;animation:flotar 3s ease-in-out infinite;"></div>
+                    <div class="burbuja-decorativa" style="width:18px;height:18px;top:25%;right:18%;animation:flotar 3.5s ease-in-out 0.5s infinite;"></div>
+                    <div class="burbuja-decorativa" style="width:24px;height:24px;bottom:20%;left:20%;animation:flotar 4s ease-in-out 1s infinite;"></div>
+                    <div class="burbuja-decorativa" style="width:14px;height:14px;bottom:30%;right:22%;animation:flotar 2.8s ease-in-out 0.3s infinite;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BARRA DE CONFIANZA ==================== -->
+    <div class="barra-confianza">
+        <div class="barra-confianza-grid">
+            <div class="barra-item"><i class="fas fa-flask"></i><p>Agua purificada</p></div>
+            <div class="barra-item"><i class="fas fa-truck"></i><p>Entrega a domicilio</p></div>
+            <div class="barra-item"><i class="fas fa-bolt"></i><p>Atención rápida</p></div>
+            <div class="barra-item"><i class="fas fa-map-marked-alt"></i><p>Cobertura en Bogotá</p></div>
+            <div class="barra-item"><i class="fas fa-building"></i><p>Servicio para empresas</p></div>
+            <div class="barra-item"><i class="fab fa-whatsapp"></i><p>Pedidos por WhatsApp</p></div>
+        </div>
+    </div>
+
+    <!-- ==================== SERVICIOS ==================== -->
+    <section id="servicios" class="seccion">
+        <div class="seccion-titulo fade-in">
+            <h2>Nuestros <span>Servicios</span></h2>
+            <p>Soluciones completas de agua purificada para hogares, oficinas, restaurantes, tiendas y eventos.</p>
+        </div>
+        <div class="servicios-grid">
+            <div class="servicio-card fade-in">
+                <div class="servicio-icono"><i class="fas fa-sync-alt"></i></div>
+                <h3>Recarga de botellones</h3>
+                <p>Recogemos o recibimos tus botellones y realizamos la recarga con agua purificada de excelente calidad.</p>
+                <!-- CAMBIAR NÚMERO WHATSAPP -->
+                <a href="https://wa.me/573001234567?text=Hola,%20solicito%20recarga%20de%20botellones." target="_blank" rel="noopener" class="btn-solicitar">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="servicio-card fade-in">
+                <div class="servicio-icono"><i class="fas fa-wine-bottle"></i></div>
+                <h3>Venta de botellones</h3>
+                <p>Botellones disponibles para hogares, oficinas, restaurantes y negocios. Entrega inmediata.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20comprar%20botellones%20de%20agua." target="_blank" rel="noopener" class="btn-solicitar">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="servicio-card fade-in">
+                <div class="servicio-icono"><i class="fas fa-truck"></i></div>
+                <h3>Entrega a domicilio</h3>
+                <p>Llevamos el agua directamente hasta tu ubicación en Bogotá y ciudades con cobertura disponible.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20necesito%20entrega%20de%20agua%20a%20domicilio." target="_blank" rel="noopener" class="btn-solicitar">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="servicio-card fade-in">
+                <div class="servicio-icono"><i class="fas fa-exclamation-triangle"></i></div>
+                <h3>Servicio urgente</h3>
+                <p>Atención prioritaria para clientes que necesitan agua rápidamente. Respuesta ágil por WhatsApp.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20necesito%20servicio%20urgente%20de%20agua." target="_blank" rel="noopener" class="btn-solicitar">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="servicio-card fade-in">
+                <div class="servicio-icono"><i class="fas fa-briefcase"></i></div>
+                <h3>Planes empresariales</h3>
+                <p>Suministro recurrente de agua para oficinas, comercios y compañías. Planes adaptados a tu negocio.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20información%20sobre%20planes%20empresariales%20de%20agua." target="_blank" rel="noopener" class="btn-solicitar">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="servicio-card fade-in">
+                <div class="servicio-icono"><i class="fas fa-glass-cheers"></i></div>
+                <h3>Agua para eventos</h3>
+                <p>Entrega programada para reuniones, celebraciones, conciertos y eventos corporativos.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20necesito%20agua%20para%20un%20evento." target="_blank" rel="noopener" class="btn-solicitar">Solicitar <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CÓMO FUNCIONA ==================== -->
+    <section id="como-funciona" class="seccion" style="background:rgba(255,255,255,0.4);max-width:100%;padding-left:0;padding-right:0;">
+        <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
+            <div class="seccion-titulo fade-in">
+                <h2>¿Cómo <span>Funciona?</span></h2>
+                <p>Un proceso simple y rápido para recibir agua purificada en tu ubicación.</p>
+            </div>
+            <div class="pasos-contenedor">
+                <svg class="pasos-linea-svg" viewBox="0 0 800 8" preserveAspectRatio="none">
+                    <path d="M0,4 L800,4" stroke="url(#gradienteLinea)" stroke-width="3" stroke-dasharray="12 8" fill="none"/>
+                    <defs>
+                        <linearGradient id="gradienteLinea" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#42E6C1" stop-opacity="0.2"/>
+                            <stop offset="50%" stop-color="#25C6DA" stop-opacity="0.8"/>
+                            <stop offset="100%" stop-color="#42E6C1" stop-opacity="0.2"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="paso fade-in">
+                    <div class="paso-numero">1</div>
+                    <h4>Escríbenos por WhatsApp</h4>
+                    <p>Contáctanos indicando el servicio que necesitas y tu ubicación.</p>
+                </div>
+                <div class="paso fade-in">
+                    <div class="paso-numero">2</div>
+                    <h4>Ubicación y cantidad</h4>
+                    <p>Indícanos dónde te encuentras y cuántos botellones requieres.</p>
+                </div>
+                <div class="paso fade-in">
+                    <div class="paso-numero">3</div>
+                    <h4>Confirmamos disponibilidad</h4>
+                    <p>Verificamos cobertura y te damos el precio según tu zona.</p>
+                </div>
+                <div class="paso fade-in">
+                    <div class="paso-numero">4</div>
+                    <h4>Recibe tu agua a domicilio</h4>
+                    <p>Entregamos el agua purificada directamente en tu ubicación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== COBERTURA ==================== -->
+    <section id="cobertura" class="seccion">
+        <div class="seccion-titulo fade-in">
+            <h2>Servicio prioritario en <span>Bogotá</span></h2>
+            <p>También atendemos solicitudes en diferentes ciudades de Colombia. Consulta disponibilidad en tu ubicación.</p>
+        </div>
+        <div class="cobertura-grid">
+            <div class="cobertura-mapa-visual fade-in">
+                <i class="fas fa-map-marked-alt"></i>
+                <p style="color:var(--azul-oscuro);font-weight:600;">Cobertura en Bogotá</p>
+                <p style="color:var(--gris-texto);font-size:0.85rem;">Norte · Sur · Centro · Occidente · Localidades y barrios sujetos a disponibilidad</p>
+            </div>
+            <div class="fade-in">
+                <h3 style="margin-bottom:12px;color:var(--azul-oscuro);">Zonas de cobertura <span style="color:var(--azul-principal);">en Bogotá</span></h3>
+                <ul class="zonas-lista">
+                    <li><i class="fas fa-check-circle"></i> Norte de Bogotá</li>
+                    <li><i class="fas fa-check-circle"></i> Sur de Bogotá</li>
+                    <li><i class="fas fa-check-circle"></i> Centro</li>
+                    <li><i class="fas fa-check-circle"></i> Occidente</li>
+                    <li><i class="fas fa-check-circle"></i> Localidades principales</li>
+                    <li><i class="fas fa-check-circle"></i> Barrios con disponibilidad</li>
+                </ul>
+                <p style="color:var(--gris-texto);font-size:0.8rem;margin-top:8px;">* Consulta la disponibilidad exacta para tu barrio o localidad.</p>
+                <div class="consulta-cobertura-input">
+                    <input type="text" id="consultaBarrio" placeholder="Escribe tu localidad o barrio">
+                    <!-- CAMBIAR NÚMERO WHATSAPP -->
+                    <button type="button" id="btnConsultaCobertura"><i class="fab fa-whatsapp"></i> Consultar</button>
+                </div>
+                <p style="color:var(--gris-texto);font-size:0.85rem;margin-top:12px;"><strong>También atendemos solicitudes en diferentes ciudades de Colombia.</strong> La cobertura, tiempos y condiciones deben confirmarse directamente con un asesor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BENEFICIOS ==================== -->
+    <section id="beneficios" class="seccion" style="background:rgba(255,255,255,0.4);max-width:100%;padding-left:0;padding-right:0;">
+        <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
+            <div class="seccion-titulo fade-in">
+                <h2>¿Por qué <span>elegirnos?</span></h2>
+                <p>Beneficios que hacen la diferencia en el servicio de agua a domicilio.</p>
+            </div>
+            <div class="beneficios-grid">
+                <div class="beneficio-item fade-in"><i class="fas fa-user-check"></i><h4>Atención directa</h4><p>Comunicación personalizada por WhatsApp.</p></div>
+                <div class="beneficio-item fade-in"><i class="fas fa-tachometer-alt"></i><h4>Servicio rápido</h4><p>Respuesta ágil a tu solicitud.</p></div>
+                <div class="beneficio-item fade-in"><i class="fas fa-thumbs-up"></i><h4>Pedidos fáciles</h4><p>Solicita en pocos pasos por WhatsApp.</p></div>
+                <div class="beneficio-item fade-in"><i class="fas fa-star"></i><h4>Agua de excelente calidad</h4><p>Agua purificada con altos estándares.</p></div>
+                <div class="beneficio-item fade-in"><i class="fas fa-calendar-alt"></i><h4>Entregas programadas</h4><p>Planes recurrentes para tu comodidad.</p></div>
+                <div class="beneficio-item fade-in"><i class="fas fa-home"></i><h4>Hogares y empresas</h4><p>Soluciones para todo tipo de clientes.</p></div>
+                <div class="beneficio-item fade-in"><i class="fas fa-comments"></i><h4>Asesoría personalizada</h4><p>Te ayudamos a elegir el mejor plan.</p></div>
+                <div class="beneficio-item fade-in"><i class="fab fa-whatsapp"></i><h4>Comunicación por WhatsApp</h4><p>Canal directo y eficiente.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PLANES ==================== -->
+    <section class="seccion">
+        <div class="seccion-titulo fade-in">
+            <h2>Modalidades de <span>Servicio</span></h2>
+            <p>Elige la opción que mejor se adapte a tus necesidades.</p>
+        </div>
+        <div class="planes-grid">
+            <div class="plan-card fade-in">
+                <div class="plan-icono">🏠</div>
+                <h3>Hogar</h3>
+                <p>Para familias que necesitan recargas periódicas de agua purificada.</p>
+                <!-- CAMBIAR NÚMERO WHATSAPP -->
+                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20cotizar%20un%20plan%20de%20agua%20para%20mi%20hogar." target="_blank" rel="noopener" class="btn-plan">Cotizar por WhatsApp</a>
+            </div>
+            <div class="plan-card fade-in destacado">
+                <div class="plan-icono">🏪</div>
+                <h3>Negocio</h3>
+                <p>Para tiendas, restaurantes y pequeños comercios que requieren suministro constante.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20consultar%20disponibilidad%20para%20mi%20negocio." target="_blank" rel="noopener" class="btn-plan">Consultar disponibilidad</a>
+            </div>
+            <div class="plan-card fade-in">
+                <div class="plan-icono">🏢</div>
+                <h3>Empresa</h3>
+                <p>Para oficinas y organizaciones que requieren entregas programadas y volumen.</p>
+                <a href="https://wa.me/573001234567?text=Hola,%20quiero%20crear%20un%20plan%20empresarial%20de%20agua." target="_blank" rel="noopener" class="btn-plan">Crear mi plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIOS ==================== -->
+    <section class="seccion" style="background:rgba(255,255,255,0.4);max-width:100%;padding-left:0;padding-right:0;">
+        <div style="max-width:var(--max-width);margin:0 auto;padding:0 24px;">
+            <div class="seccion-titulo fade-in">
+                <h2>Lo que dicen <span>nuestros clientes</span></h2>
+                <p>Ejemplos editables. Reemplaza con testimonios reales de clientes.</p>
+                <!-- COMENTARIO: Reemplazar los testimonios de ejemplo por opiniones reales de clientes -->
+            </div>
+            <div class="testimonios-grid">
+                <div class="testimonio-card fade-in">
+                    <div class="comillas">"</div>
+                    <!-- COMENTARIO: Reemplaza este texto con un testimonio real -->
+                    <p>Agrega aquí el testimonio real de un cliente satisfecho con el servicio de agua a domicilio.</p>
+                    <p class="testimonio-autor">Nombre del cliente</p>
+                    <p class="testimonio-etiqueta">Bogotá · Cliente residencial</p>
+                </div>
+                <div class="testimonio-card fade-in">
+                    <div class="comillas">"</div>
+                    <!-- COMENTARIO: Reemplaza este texto con un testimonio real -->
+                    <p>Agrega aquí el testimonio real de un cliente satisfecho con el servicio de agua a domicilio.</p>
+                    <p class="testimonio-autor">Nombre del cliente</p>
+                    <p class="testimonio-etiqueta">Bogotá · Cliente empresarial</p>
+                </div>
+                <div class="testimonio-card fade-in">
+                    <div class="comillas">"</div>
+                    <!-- COMENTARIO: Reemplaza este texto con un testimonio real -->
+                    <p>Agrega aquí el testimonio real de un cliente satisfecho con el servicio de agua a domicilio.</p>
+                    <p class="testimonio-autor">Nombre del cliente</p>
+                    <p class="testimonio-etiqueta">Colombia · Cliente evento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="seccion">
+        <div class="seccion-titulo fade-in">
+            <h2>Preguntas <span>Frecuentes</span></h2>
+            <p>Respuestas claras para que tomes la mejor decisión.</p>
+        </div>
+        <div class="faq-acordeon">
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Realizan entregas en toda Bogotá? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Cubrimos las principales zonas de Bogotá. La disponibilidad exacta para tu barrio o localidad se confirma al momento de tu consulta por WhatsApp.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Cómo puedo pedir una recarga? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Simplemente escríbenos por WhatsApp indicando tu ubicación y la cantidad de botellones. Te confirmamos disponibilidad y precio de inmediato.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Cuánto tarda el domicilio? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Los tiempos de entrega varían según tu ubicación y la demanda del momento. Al contactarnos te daremos un estimado preciso para tu zona.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Puedo solicitar varias unidades? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Sí, puedes solicitar la cantidad de botellones que necesites. Para pedidos grandes o empresariales, contáctanos para coordinar la entrega.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Atienden oficinas y empresas? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Sí, ofrecemos planes empresariales con entregas programadas para oficinas, comercios y organizaciones. Consulta por WhatsApp para armar tu plan.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Tienen entregas programadas? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Sí, podemos coordinar entregas periódicas según la frecuencia que necesites: diaria, semanal, quincenal o mensual. Consúltanos por WhatsApp.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿Cómo consulto el precio? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Los precios se confirman por WhatsApp según tu ubicación, la cantidad de botellones y el tipo de servicio. Escríbenos para recibir una cotización sin compromiso.</p></div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-pregunta">¿La cobertura nacional está disponible en todas las ciudades? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-respuesta"><p>Atendemos solicitudes en diferentes ciudades de Colombia. La disponibilidad debe confirmarse directamente con un asesor, ya que varía según la ubicación.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA FINAL ==================== -->
+    <div class="cta-final" id="contacto">
+        <div class="cta-final-contenido">
+            <h2>¿Necesitas agua a domicilio?</h2>
+            <p>Solicita tu recarga o entrega en pocos minutos. Nuestro equipo verificará la disponibilidad en tu zona.</p>
+            <!-- CAMBIAR NÚMERO WHATSAPP -->
+            <a href="https://wa.me/573001234567?text=Hola,%20quiero%20pedir%20agua%20a%20domicilio." target="_blank" rel="noopener" class="btn-cta-pulso"><i class="fab fa-whatsapp"></i> Pedir agua por WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <!-- CAMBIAR NOMBRE EMPRESA -->
+                <h4>Agua Pura Colombia</h4>
+                <p>Líderes en recarga de agua a domicilio. Agua purificada hasta la puerta de tu hogar con servicio rápido, seguro y confiable.</p>
+                <!-- CAMBIAR NÚMERO WHATSAPP, CORREO y HORARIOS -->
+                <p><i class="fab fa-whatsapp"></i> +57 300 123 4567</p>
+                <p><i class="fas fa-envelope"></i> contacto@aguapuracolombia.com</p>
+                <p><i class="fas fa-clock"></i> Horarios: consultar por WhatsApp</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces rápidos</h4>
+                <a href="#hero">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#cobertura">Cobertura</a>
+                <a href="#como-funciona">Cómo funciona</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#faq">Preguntas Frecuentes</a>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <a href="#servicios">Recarga de botellones</a>
+                <a href="#servicios">Venta de botellones</a>
+                <a href="#servicios">Entrega a domicilio</a>
+                <a href="#servicios">Servicio urgente</a>
+                <a href="#servicios">Planes empresariales</a>
+                <a href="#servicios">Agua para eventos</a>
+            </div>
+            <div class="footer-col">
+                <h4>Cobertura</h4>
+                <a href="#cobertura">Bogotá</a>
+                <a href="#cobertura">Colombia</a>
+                <!-- CAMBIAR REDES SOCIALES -->
+                <h4 style="margin-top:12px;">Redes Sociales</h4>
+                <div style="display:flex;gap:10px;font-size:1.2rem;">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; <span id="anioCopyright"></span> Agua Pura Colombia. Todos los derechos reservados. | <a href="#" style="color:rgba(255,255,255,0.5);">Aviso de privacidad</a> | <a href="#" style="color:rgba(255,255,255,0.5);">Términos y condiciones</a></p>
+            <p style="font-size:0.75rem;margin-top:4px;">La disponibilidad del servicio depende de la zona. Consulta con un asesor por WhatsApp.</p>
+        </div>
+    </footer>
+
+    <!-- ==================== BOTONES FLOTANTES ==================== -->
+    <!-- CAMBIAR NÚMERO WHATSAPP: Reemplazar 573001234567 -->
+    <a href="https://wa.me/573001234567?text=Hola,%20quiero%20solicitar%20una%20recarga%20de%20agua%20a%20domicilio.%20Mi%20ubicación%20es:" target="_blank" rel="noopener" class="btn-flotante-wsp" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#hero" class="btn-flotante-arriba" id="btnArriba" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Notificación -->
+    <div class="notificacion" id="notificacion">✅ Solicitud lista. Abriendo WhatsApp...</div>
+
+    <script>
+        // ==================== PRELOADER ====================
+        (function() {
+            const preloader = document.getElementById('preloader');
+            const btnSaltar = document.getElementById('btnSaltarPreloader');
+            let preloaderOculto = false;
+
+            function ocultarPreloader() {
+                if (preloaderOculto) return;
+                preloaderOculto = true;
+                preloader.classList.add('oculto');
+                document.body.style.overflow = '';
+            }
+
+            // Ocultar automáticamente después de 2.6 segundos
+            const tiempoAuto = setTimeout(ocultarPreloader, 2600);
+
+            // Botón de saltar
+            btnSaltar.addEventListener('click', () => {
+                clearTimeout(tiempoAuto);
+                ocultarPreloader();
+            });
+
+            // Prevenir scroll durante preloader
+            document.body.style.overflow = 'hidden';
+        })();
+
+        // ==================== CANVAS DE FONDO ====================
+        (function() {
+            const canvas = document.getElementById('fondoCanvas');
+            const ctx = canvas.getContext('2d');
+            let gotas = [];
+            const maxGotas = 45;
+
+            function redimensionarCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            redimensionarCanvas();
+            window.addEventListener('resize', redimensionarCanvas);
+
+            class Gota {
+                constructor() {
+                    this.reset(true);
+                }
+                reset(inicial = false) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = inicial ? Math.random() * canvas.height : -30;
+                    this.radio = Math.random() * 4 + 2;
+                    this.velocidad = Math.random() * 0.5 + 0.25;
+                    this.opacidad = Math.random() * 0.35 + 0.1;
+                    this.desplazamientoX = (Math.random() - 0.5) * 0.3;
+                }
+                actualizar() {
+                    this.y += this.velocidad;
+                    this.x += this.desplazamientoX;
+                    if (this.y > canvas.height + 40) {
+                        this.reset();
+                        this.y = -30;
+                    }
+                    if (this.x < -20) this.x = canvas.width + 20;
+                    if (this.x > canvas.width + 20) this.x = -20;
+                }
+                dibujar(ctx) {
+                    ctx.beginPath();
+                    // Forma de gota
+                    const cx = this.x;
+                    const cy = this.y;
+                    const r = this.radio;
+                    ctx.moveTo(cx, cy - r * 1.4);
+                    ctx.bezierCurveTo(cx - r, cy - r * 0.5, cx - r, cy + r * 0.6, cx, cy + r);
+                    ctx.bezierCurveTo(cx + r, cy + r * 0.6, cx + r, cy - r * 0.5, cx, cy - r * 1.4);
+                    ctx.fillStyle = `rgba(37,198,218,${this.opacidad})`;
+                    ctx.fill();
+                    // Brillo
+                    ctx.fillStyle = `rgba(255,255,255,${this.opacidad * 0.6})`;
+                    ctx.beginPath();
+                    ctx.arc(cx - r * 0.25, cy - r * 0.5, r * 0.35, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < maxGotas; i++) {
+                gotas.push(new Gota());
+            }
+
+            function animarFondo() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                gotas.forEach(gota => {
+                    gota.actualizar();
+                    gota.dibujar(ctx);
+                });
+                requestAnimationFrame(animarFondo);
+            }
+            animarFondo();
+        })();
+
+        // ==================== HEADER SCROLL ====================
+        const header = document.getElementById('header');
+        const btnArriba = document.getElementById('btnArriba');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+                btnArriba.classList.add('visible');
+            } else {
+                header.classList.remove('scrolled');
+                btnArriba.classList.remove('visible');
+            }
+        });
+
+        // ==================== MENÚ HAMBURGUESA ====================
+        const hamburguesa = document.getElementById('hamburguesa');
+        const nav = document.getElementById('nav');
+        hamburguesa.addEventListener('click', () => {
+            hamburguesa.classList.toggle('activo');
+            nav.classList.toggle('activo');
+        });
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburguesa.classList.remove('activo');
+                nav.classList.remove('activo');
+            });
+        });
+
+        // ==================== FADE-IN AL SCROLL ====================
+        const elementosFade = document.querySelectorAll('.fade-in');
+        const observerFade = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observerFade.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -20px 0px' });
+        elementosFade.forEach(el => observerFade.observe(el));
+
+        // ==================== FORMULARIO RÁPIDO ====================
+        // CAMBIAR NÚMERO WHATSAPP: Reemplazar 573001234567
+        const NUMERO_WHATSAPP = '573001234567';
+        const notificacion = document.getElementById('notificacion');
+
+        function mostrarNotificacion() {
+            notificacion.classList.add('visible');
+            setTimeout(() => notificacion.classList.remove('visible'), 3000);
+        }
+
+        document.getElementById('btnFormRapido').addEventListener('click', () => {
+            const nombre = document.getElementById('rapidoNombre').value.trim();
+            const telefono = document.getElementById('rapidoTelefono').value.trim();
+            const ciudad = document.getElementById('rapidoCiudad').value.trim();
+            const barrio = document.getElementById('rapidoBarrio').value.trim();
+            const servicio = document.getElementById('rapidoServicio').value;
+            const cantidad = document.getElementById('rapidoCantidad').value;
+
+            if (!nombre || !telefono || !ciudad) {
+                alert('Por favor completa los campos obligatorios: Nombre, Teléfono y Ciudad.');
+                return;
+            }
+
+            const mensaje = `💧 *SOLICITUD DE AGUA A DOMICILIO*\n\n` +
+                `👤 *Nombre:* ${nombre}\n` +
+                `📱 *Teléfono:* ${telefono}\n` +
+                `📍 *Ciudad:* ${ciudad}\n` +
+                `🏘️ *Barrio/Localidad:* ${barrio || 'No especificado'}\n` +
+                `📦 *Servicio:* ${servicio || 'No especificado'}\n` +
+                `🔢 *Cantidad de botellones:* ${cantidad || 'No especificada'}\n\n` +
+                `_Enviado desde el formulario rápido._`;
+
+            mostrarNotificacion();
+            setTimeout(() => {
+                window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`,
+                    '_blank', 'noopener');
+            }, 400);
+        });
+
+        // ==================== CONSULTA COBERTURA ====================
+        document.getElementById('btnConsultaCobertura').addEventListener('click', () => {
+            const barrio = document.getElementById('consultaBarrio').value.trim();
+            const mensaje = barrio ?
+                `Hola, quiero consultar la disponibilidad de agua a domicilio en ${barrio}.` :
+                'Hola, quiero consultar la cobertura de agua a domicilio en mi zona.';
+            mostrarNotificacion();
+            setTimeout(() => {
+                window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`,
+                    '_blank', 'noopener');
+            }, 400);
+        });
+
+        // ==================== FAQ ACORDEÓN ====================
+        document.querySelectorAll('.faq-pregunta').forEach(pregunta => {
+            pregunta.addEventListener('click', () => {
+                const faqItem = pregunta.parentElement;
+                const estabaActivo = faqItem.classList.contains('activo');
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove(
+                    'activo'));
+                if (!estabaActivo) {
+                    faqItem.classList.add('activo');
+                }
+            });
+        });
+
+        // ==================== COPYRIGHT DINÁMICO ====================
+        document.getElementById('anioCopyright').textContent = new Date().getFullYear();
+
+        // ==================== NAVEGACIÓN ACTIVA ====================
+        const secciones = document.querySelectorAll('section[id], div[id]');
+        const navLinks = document.querySelectorAll('nav ul li a:not(.btn-wsp-nav)');
+        window.addEventListener('scroll', () => {
+            let seccionActual = '';
+            secciones.forEach(seccion => {
+                const rect = seccion.getBoundingClientRect();
+                if (rect.top <= 160 && rect.bottom >= 160) {
+                    seccionActual = seccion.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('activo');
+                if (link.getAttribute('href') === '#' + seccionActual) {
+                    link.classList.add('activo');
+                }
+            });
+        });
+
+        // ==================== BOTÓN VOLVER ARRIBA ====================
+        btnArriba.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
